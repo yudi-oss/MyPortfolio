@@ -134,7 +134,9 @@ export const data = {
 
   socials: [
     { label: "GitHub", href: "https://github.com/yudi-oss" },
-    // ✏️ add more, e.g. LinkedIn / X / Dribbble
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/your-handle", }, // ✏️ your LinkedIn
+    { label: "Instagram", href: "https://www.instagram.com/your-handle", }, // ✏️ your Instagram
+    { label: "WhatsApp", href: "https://wa.me/0000000000", }, // ✏️ your WhatsApp number (country code, no + or spaces)
   ],
 };
 

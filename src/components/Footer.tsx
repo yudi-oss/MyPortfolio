@@ -30,6 +30,13 @@ export default function Footer() {
 
       <div className="footer__bar">
         <span>© 2026 — Built &amp; designed by {data.name}</span>
+        <span className="footer__socials">
+          {data.socials.map((s) => (
+            <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer">
+              {s.label} <span aria-hidden>↗</span>
+            </a>
+          ))}
+        </span>
         <span className="footer__time">
           <span className="pulse" aria-hidden />
           Kathmandu {time ?? "--:--:--"}
