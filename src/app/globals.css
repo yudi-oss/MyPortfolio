@@ -3,14 +3,15 @@
    ============================================================ */
 
 :root {
-  --bg: #0a0f1a;
-  --bg-raise: #121a29;
-  --fg: #f3f4f0;
-  --muted: #97a1b4;
-  --line: rgba(243, 244, 240, 0.14);
-  --accent: #22d3ee;
-  --accent-ink: #06121a;
-  --accent-soft: rgba(34, 211, 238, 0.12);
+  --bg: #f6f1e7;
+  --bg-raise: #efe7d8;
+  --fg: #1c1917;
+  --muted: #6f6556;
+  --line: rgba(28, 25, 23, 0.16);
+  --accent: #bf4f2a;
+  --accent-ink: #fdf8f0;
+  --accent-soft: rgba(191, 79, 42, 0.1);
+  --warm-shadow: 60, 45, 30;
   --display: var(--font-display), serif;
   --body: var(--font-body), sans-serif;
   --mono: var(--font-mono), "SF Mono", ui-monospace, monospace;
@@ -33,6 +34,11 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% -10%, rgba(191, 79, 42, 0.09), transparent 70%),
+    radial-gradient(rgba(28, 25, 23, 0.045) 1px, transparent 1px);
+  background-size: 100% 1400px, 4px 4px;
+  background-repeat: no-repeat, repeat;
 }
 
 ::selection { background: var(--accent); color: var(--accent-ink) }
@@ -60,7 +66,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.02; l
 }
 
 .nav--scrolled {
-  background: rgba(10, 15, 26, 0.72);
+  background: rgba(246, 241, 231, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom-color: var(--line);
@@ -167,7 +173,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.02; l
   position: fixed;
   inset: 0;
   z-index: 45;
-  background: rgba(10, 15, 26, 0.97);
+  background: rgba(246, 241, 231, 0.97);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   display: flex;
@@ -266,7 +272,7 @@ h2 em { font-style: italic; color: var(--accent) }
 .line > span { display: block }
 .hero__accent { color: var(--accent) }
 
-.photo { position: relative; overflow: hidden; background: #111726 }
+.photo { position: relative; overflow: hidden; background: #e9e0d0; box-shadow: 0 26px 52px -28px rgba(var(--warm-shadow), 0.55) }
 .oval { aspect-ratio: 3 / 4; border-radius: 50%; width: min(100%, 380px) }
 .arch { aspect-ratio: 4 / 5; border-radius: 999px 999px 18px 18px }
 .photo img { transition: transform 1s var(--ease) }
@@ -284,6 +290,7 @@ h2 em { font-style: italic; color: var(--accent) }
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   overflow: hidden;
+  box-shadow: 0 10px 24px -16px rgba(var(--warm-shadow), 0.5);
   transition: color 0.35s, border-color 0.35s, transform 0.35s var(--ease);
 }
 
@@ -350,7 +357,7 @@ h2 em { font-style: italic; color: var(--accent) }
   width: min(75vw, 620px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.15), transparent 65%);
+  background: radial-gradient(circle, rgba(191, 79, 42, 0.17), transparent 65%);
   filter: blur(28px);
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -386,7 +393,7 @@ h2 em { font-style: italic; color: var(--accent) }
 
 .hero__photo {
   width: min(100%, 400px);
-  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 34px 70px -24px rgba(var(--warm-shadow), 0.45);
 }
 
 .hero__ring {
@@ -414,7 +421,7 @@ h2 em { font-style: italic; color: var(--accent) }
   align-items: center;
   gap: 0.55rem;
   padding: 0.6rem 1.1rem;
-  background: rgba(10, 15, 26, 0.75);
+  background: rgba(246, 241, 231, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--line);
@@ -467,7 +474,7 @@ h2 em { font-style: italic; color: var(--accent) }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   padding: clamp(1rem, 2vw, 1.5rem) 0;
-  background: var(--bg);
+  background: var(--bg-raise);
 }
 
 .marquee__row {
@@ -541,7 +548,7 @@ h2 em { font-style: italic; color: var(--accent) }
   transition: background 0.4s;
 }
 
-.stat:hover { background: var(--bg-raise) }
+.stat:hover { background: var(--accent-soft) }
 
 .stat strong {
   display: block;
@@ -575,12 +582,15 @@ h2 em { font-style: italic; color: var(--accent) }
   border: 1px solid var(--line);
   border-radius: 20px;
   padding: clamp(1.4rem, 2.5vw, 1.9rem);
-  transition: transform 0.5s var(--ease), border-color 0.4s, background 0.4s;
+  box-shadow: 0 1px 2px rgba(var(--warm-shadow), 0.06);
+  transition: transform 0.5s var(--ease), border-color 0.4s, background 0.4s, box-shadow 0.5s var(--ease);
 }
 
 .skill-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(34, 211, 238, 0.5);
+  border-color: rgba(191, 79, 42, 0.45);
+  background: var(--bg);
+  box-shadow: 0 26px 46px -22px rgba(var(--warm-shadow), 0.4);
 }
 
 .skill-card__top {
@@ -643,7 +653,7 @@ h2 em { font-style: italic; color: var(--accent) }
 .timeline__line span {
   display: block;
   height: 100%;
-  background: linear-gradient(var(--accent), rgba(34, 211, 238, 0.15));
+  background: linear-gradient(var(--accent), rgba(191, 79, 42, 0.15));
   transform-origin: top;
 }
 
@@ -736,6 +746,7 @@ h2 em { font-style: italic; color: var(--accent) }
   display: block;
   overflow: hidden;
   border-radius: 999px 999px 18px 18px;
+  border: 1px solid var(--line);
 }
 
 .project__media .photo { border-radius: inherit }
@@ -750,7 +761,8 @@ h2 em { font-style: italic; color: var(--accent) }
   align-items: center;
   justify-content: center;
   gap: 0.9rem;
-  background: rgba(10, 15, 26, 0.55);
+  background: rgba(28, 22, 18, 0.58);
+  color: #fdf8f0;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   opacity: 0;
@@ -791,8 +803,8 @@ h2 em { font-style: italic; color: var(--accent) }
   right: 1.6rem;
   font-family: var(--display);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  color: rgba(243, 244, 240, 0.75);
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  color: rgba(253, 248, 240, 0.95);
+  text-shadow: 0 2px 20px rgba(20, 14, 8, 0.65);
 }
 
 .project__info {
@@ -1029,7 +1041,7 @@ h2 em { font-style: italic; color: var(--accent) }
   inset: 0;
   width: 100%;
   height: 100%;
-  background: rgba(5, 8, 15, 0.86);
+  background: rgba(43, 32, 22, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   cursor: default;
@@ -1081,18 +1093,18 @@ h2 em { font-style: italic; color: var(--accent) }
 
 /* the paper it is printed on */
 .paper {
-  --p-bg: #f7f2e6;
-  --p-ink: #1e1c16;
-  --p-muted: #6d6757;
-  --p-line: rgba(30, 28, 22, 0.16);
-  --p-accent: #0e7490;
+  --p-bg: #fffdf7;
+  --p-ink: #1a1714;
+  --p-muted: #6f675c;
+  --p-line: rgba(26, 23, 20, 0.16);
+  --p-accent: #a8451f;
   background-color: var(--p-bg);
   background-image: radial-gradient(rgba(30, 28, 22, 0.035) 1px, transparent 1px);
   background-size: 4px 4px;
   color: var(--p-ink);
   border-radius: 5px;
   padding: clamp(1.75rem, 5vw, 3.25rem);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 34px 70px -20px rgba(var(--warm-shadow), 0.5);
 }
 
 .paper__hello {
@@ -1266,6 +1278,21 @@ h2 em { font-style: italic; color: var(--accent) }
   color: var(--p-accent);
 }
 
+.resume-modal__pdf {
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 34px 70px -20px rgba(var(--warm-shadow), 0.5);
+}
+
+.resume-modal__pdf iframe {
+  display: block;
+  width: 100%;
+  height: min(78vh, 920px);
+  border: 0;
+  background: #fff;
+}
+
 .resume-modal__actions {
   display: flex;
   gap: 0.8rem;
@@ -1305,6 +1332,7 @@ h2 em { font-style: italic; color: var(--accent) }
   .entry__date { padding-top: 0 }
   .paper__skills dt { padding-top: 0 }
   .resume-modal__actions .btn { width: 100% }
+  .resume-modal__pdf iframe { height: 70vh }
   .hero__foot { font-size: 0.64rem }
   .hero__place { display: none }
   .footer__bar { justify-content: center; text-align: center }

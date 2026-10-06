@@ -4,14 +4,14 @@ export const data = {
   name: "Yudina Magar",
   role: "Front-End Developer",
   location: "Kathmandu, Nepal",
-  email: "hello@yoursite.com", // ✏️ your real email
-  phone: "+00 000 000 0000", // ✏️ your real phone
-  address: "Your street, City, Country", // ✏️
+  email: "yudinamagar068@gmail.com", 
+  phone: "9825009689", // 
+  address: "Kathmandu, Nepal", // 
   available: true,
 
   resume: {
-    // ✏️ drop your PDF at public/resume.pdf (or change this path)
-    file: "/resume.pdf",
+    // 
+    file: "/myresume.pdf",
     intro:
       "I'm a front-end developer and IT student in Kathmandu. I like taking a design and turning it into something that feels fast, clear and easy to use — and I'm just as happy fiddling with spacing until it looks right as I am shipping a new feature. Currently working at Tecobit, building real products for real clients.",
   },
@@ -134,10 +134,9 @@ export const data = {
 
   socials: [
     { label: "GitHub", href: "https://github.com/yudi-oss" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/your-handle", }, // ✏️ your LinkedIn
-    { label: "Instagram", href: "https://www.instagram.com/your-handle", }, // ✏️ your Instagram
-    { label: "WhatsApp", href: "https://wa.me/0000000000", }, // ✏️ your WhatsApp number (country code, no + or spaces)
-  ],
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/yudina-magar-755bb2341/", }, 
+    { label: "Instagram", href: "https://www.instagram.com/jhbbhghibjkjbbvg/", }, //
+    { label: "WhatsApp", href: "https://wa.me/9825009689", }]
 };
 
 export type PortfolioData = typeof data;

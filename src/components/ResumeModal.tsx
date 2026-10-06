@@ -95,6 +95,7 @@ export default function ResumeModal({
               </button>
             </div>
 
+            {hasPdf === false ? (
             <article className="paper">
               <header className="paper__head">
                 <p className="paper__hello">Hi, I&apos;m {data.name.split(" ")[0]} —</p>
@@ -165,6 +166,14 @@ export default function ResumeModal({
                 <span>{data.name}</span>
               </footer>
             </article>
+            ) : (
+              <div className="resume-modal__pdf">
+                <iframe
+                  src={`${data.resume.file}#view=FitH`}
+                  title={`${data.name} — Resume`}
+                />
+              </div>
+            )}
 
             <div className="resume-modal__actions">
               <button type="button" className="btn btn--solid" onClick={() => window.print()}>
@@ -173,6 +182,11 @@ export default function ResumeModal({
               {hasPdf && (
                 <a className="btn" href={data.resume.file} target="_blank" rel="noreferrer">
                   <span>Open PDF</span>
+                </a>
+              )}
+              {hasPdf && (
+                <a className="btn" href={data.resume.file} download>
+                  <span>Download</span>
                 </a>
               )}
             </div>
