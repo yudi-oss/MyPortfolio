@@ -1,5 +1,7 @@
 import About from "@/components/About";
+import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import Nav from "@/components/Nav";
@@ -19,7 +21,9 @@ export default function Home() {
         <Projects />
         <Experience />
         <Quote />
+        <Contact />
       </main>
+      <Footer />
     </>
   );
 }
